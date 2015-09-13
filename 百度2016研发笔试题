@@ -1,0 +1,33 @@
+//三道编程题,详细自己搜索
+//第一题是罪犯移动监狱 看起来像背包问题
+//第二题是公交车 上下车 问最多车上几人
+//第三题是矩阵从左下到右上,有多少种走法,有障碍可以斜着走,是DP问题
+
+//第二题写的 一般 期待后来改善
+
+#include<iostream>
+#include<deque>
+using namespace std;
+
+int main()
+{
+	deque<int> q;
+	int n;
+	scanf("%d", &n);
+	int s, x;
+	int max = 0;
+	while (n--) {
+		scanf("%d %d", &x, &s);
+		while (s--)
+			q.push_back(1);
+		while (x--)
+
+			q.pop_back();
+		if (q.size() > max)
+			max = q.size();
+	}
+	cout << max << endl;
+	return 0;
+}
+
+//个人写的太烂了 cin没法输入 所以换scanf
